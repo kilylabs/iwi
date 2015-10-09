@@ -57,6 +57,7 @@ class Iwi extends Image
                 $this->save($path);
             }
         }
+        return '/'.$path;
         return Yii::app()->createUrl($path);
     }
 
@@ -70,6 +71,9 @@ class Iwi extends Image
         }
         $path = array();
         $info = pathinfo($this->image["file"]);
+        if(!isset($info['extension'])) {
+            $info['extension'] = 'jpg';
+        }
         $path[] = $this->buildDir();
         $path[] = $this->hash() . "." . $info['extension'];
         return implode("/", $path);
@@ -80,7 +84,7 @@ class Iwi extends Image
      */
     public function buildDir()
     {
-        $folder[] = YiiBase::getPathOfAlias('webroot.images.site.cache');
+        $folder[] = dirname(YiiBase::getPathOfAlias('application')).'/images/site/cache';
         $folder[] = substr($this->hash(), 0, 2);
         $folder[] = substr($this->hash(), 2, 2);
 
