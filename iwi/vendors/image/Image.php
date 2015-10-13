@@ -336,7 +336,7 @@ class Image {
 			if ($chmod !== FALSE)
 			{
 				// Set permissions
-				chmod($new_image, $chmod);
+				@chmod($new_image, $chmod);
 			}
 		}
 		
