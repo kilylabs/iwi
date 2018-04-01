@@ -96,7 +96,7 @@ class Iwi extends Image
         $folder = implode("/", $folder);
 
         if (!is_dir($folder)) {
-            mkdir($folder, 0755, true);
+            @mkdir($folder, 0755, true);
         }
 
         return $path;
