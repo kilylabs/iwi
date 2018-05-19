@@ -1,0 +1,6 @@
+{
+    "name": "kilylabs/iwi",
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
