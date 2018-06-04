@@ -1,7 +1,7 @@
 <?php
 
-Yii::import('application.extensions.iwi.vendors.image.Image');
-Yii::import('application.extensions.iwi.models.Storage');
+Yii::import('vendor.kilylabs.iwi.iwi.vendors.image.Image');
+Yii::import('vendor.kilylabs.iwi.iwi.models.Storage');
 
 class Iwi extends Image
 {
