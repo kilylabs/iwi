@@ -10,7 +10,7 @@
  * @copyright  (c) 2007-2008 Kohana Team
  * @license    http://kohanaphp.com/license.html
  */
-Yii::import('application.extensions.iwi.vendors.image.CArray');
+Yii::import('vendor.kilylabs.iwi.iwi.vendors.image.CArray');
 
 class Image_GD_Driver extends Image_Driver {
 

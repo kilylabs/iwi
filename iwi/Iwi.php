@@ -84,13 +84,14 @@ class Iwi extends Image
      */
     public function buildDir()
     {
-        $folder[] = dirname(YiiBase::getPathOfAlias('application')).'/images/site/cache';
-        $folder[] = substr($this->hash(), 0, 2);
-        $folder[] = substr($this->hash(), 2, 2);
+        $hash = $this->hash();
+        $folder[] = YiiBase::getPathOfAlias('webroot.assets.cache.images');
+        $folder[] = substr($hash, 0, 2);
+        $folder[] = substr($hash, 2, 2);
 
-        $path[] = "images/site/cache";
-        $path[] = substr($this->hash(), 0, 2);
-        $path[] = substr($this->hash(), 2, 2);
+        $path[] = "assets/cache/images";
+        $path[] = substr($hash, 0, 2);
+        $path[] = substr($hash, 2, 2);
 
         $path = implode("/", $path);
         $folder = implode("/", $folder);
@@ -143,8 +144,8 @@ class Iwi extends Image
      */
     public function verifyTable()
     {
-        if (!Yii::app()->getDb()->schema->getTable('{{storage}}')) {
-            Yii::app()->getDb()->createCommand()->createTable("{{storage}}", array(
+        if (!Yii::app()->getDb()->schema->getTable('{{Storage}}')) {
+            Yii::app()->getDb()->createCommand()->createTable("{{Storage}}", array(
                 'key' => 'string',
                 'value' => 'text',
             ));
@@ -212,7 +213,7 @@ class Iwi extends Image
         $driver = 'Image_' . ucfirst($this->config['driver']) . '_Driver';
 
         // Load the driver
-        Yii::import("application.extensions.iwi.vendors.image.drivers.$driver");
+        Yii::import("vendor.kilylabs.iwi.iwi.vendors.image.drivers.$driver");
 
         // Initialize the driver
         $this->driver = new $driver($this->config['params']);

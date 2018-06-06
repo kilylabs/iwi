@@ -1,6 +1,6 @@
 <?php
 
-Yii::import('application.extensions.iwi.vendors.image.Image');
+Yii::import('vendor.kilylabs.iwi.iwi.vendors.image.Image');
 
 /**
  * Description of CImageComponent

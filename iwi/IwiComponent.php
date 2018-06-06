@@ -1,7 +1,7 @@
 <?php
 
-Yii::import('application.extensions.iwi.Iwi');
-Yii::import('application.extensions.iwi.vendors.image.CImageComponent');
+Yii::import('vendor.kilylabs.iwi.iwi.Iwi');
+Yii::import('vendor.kilylabs.iwi.iwi.vendors.image.CImageComponent');
 
 /**
  * Description of CImageComponent
