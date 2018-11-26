@@ -54,7 +54,7 @@ class Iwi extends Image
         $path = $this->buildPath();
         if ($path) {
             if ($this->createOrNone() || !file_exists($path)) {
-                @$this->save($path);
+                @$this->save(Yii::getPathOfAlias('webroot').'/'.$path);
             }
         }
         return '/'.$path;
